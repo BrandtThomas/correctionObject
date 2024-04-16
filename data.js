@@ -45,3 +45,54 @@ data.nappages.nappage.forEach(element => {
     card.appendChild(nappagePara)
 
 })
+
+
+const form = document.createElement('form')
+body.appendChild(form)
+
+data.nappages.nappage.forEach(element => {
+    const inputRadio = document.createElement('input')
+    inputRadio.type = "radio"
+    inputRadio.id = element.type
+    inputRadio.name = "nappage"
+    inputRadio.value = element.type
+    form.appendChild(inputRadio)
+
+    const labelRadio = document.createElement('label')
+    labelRadio.htmlFor = element.type
+    labelRadio.textContent = element.type
+    form.appendChild(labelRadio)
+})
+
+const br = document.createElement('br')
+form.appendChild(br)
+
+data.topping.forEach(element => {
+    console.log(element.type);
+    const inputRadio = document.createElement('input')
+    inputRadio.type = "radio"
+    inputRadio.id = element.type
+    inputRadio.name = "topping"
+    inputRadio.value = element.type
+    form.appendChild(inputRadio)
+    
+    const labelRadio = document.createElement('label')
+    labelRadio.htmlFor = element.type
+    labelRadio.textContent = element.type
+    form.appendChild(labelRadio)
+})
+
+const btn = document.createElement('button')
+btn.textContent = "Valider"
+btn.addEventListener("click", () => {
+    const h2 = document.createElement('h2')
+})
+const br2 = document.createElement('br')
+form.appendChild(br2)
+
+form.appendChild(btn)
+
+// Tous les napages possible à l'aide d'un input de type radio
+// Tous les toppings possible à l'aide d'un autre input de type radio
+// Un bouton
+// Un écouteur d'événement sur le bouton qui permettra d'afficher dans un h2 le type de nappage et le type de topping
